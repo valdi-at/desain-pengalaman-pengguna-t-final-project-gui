@@ -1,0 +1,55 @@
+@import "./styles/daur-tokens.css";
+@import "./styles/daur-components.css";
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #141d10;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* ---- Scan screen pulse rings ---- */
+.kiosk-scan-ring {
+  animation: kioskPulse 1.5s ease-in-out infinite;
+}
+.kiosk-scan-ring-slow {
+  animation: kioskPulse 1.5s ease-in-out infinite;
+  animation-delay: 0.55s;
+}
+@keyframes kioskPulse {
+  0%   { transform: scale(0.82); opacity: .85; }
+  70%  { transform: scale(1.14); opacity: 0; }
+  100% { transform: scale(1.14); opacity: 0; }
+}
+
+@keyframes fadeSlideUp {
+  from { transform: translateY(10px); }
+  to   { transform: translateY(0); }
+}
+@keyframes checkPop {
+  0%   { transform: translateX(-6px); }
+  100% { transform: translateX(0); }
+}
+@keyframes screenIn {
+  from { transform: translateY(16px); }
+  to   { transform: translateY(0); }
+}
+
+/* Resting state is always the visible end-state. Entrance motion is
+   transform-only (never opacity) so content is never hidden if the
+   animation clock is frozen (e.g. a backgrounded tab) or disabled. */
+@media (prefers-reduced-motion: no-preference) {
+  .anim-up       { animation: fadeSlideUp 0.28s ease-out; }
+  .anim-up-delay { animation: fadeSlideUp 0.28s ease-out; }
+  .check-pop     { animation: checkPop 0.22s ease-out; }
+  .screen-in     { animation: screenIn 0.3s cubic-bezier(0.22,1,0.36,1); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 1; }
+}
+.pulse-glow { animation: pulseGlow 1.4s ease-in-out infinite; }

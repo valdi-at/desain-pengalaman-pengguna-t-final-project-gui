@@ -1,0 +1,207 @@
+/* ============================================================
+   DAUR DESIGN SYSTEM — daur-components.css
+   Component patterns (button, card, tab, badge, callout, bullets,
+   form fields). Mirrors shadcn-ui structural conventions, re-skinned
+   to the Daur organic-editorial theme. Load AFTER daur-tokens.css.
+   ============================================================ */
+
+/* ---------- BUTTONS ---------- */
+.daur-btn {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.daur-btn:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+
+/* primary — forest fill */
+.daur-btn--primary { background: var(--accent); color: #fff; }
+.daur-btn--primary:hover { background: #2f590d; }
+.daur-btn--primary:active { background: #284b0b; }
+
+/* secondary — teal */
+.daur-btn--secondary { background: var(--accent-teal); color: #fff; }
+.daur-btn--secondary:hover { background: #178563; }
+
+/* outline */
+.daur-btn--outline {
+  background: var(--bg-surface);
+  color: var(--accent);
+  border-color: var(--border-mid);
+}
+.daur-btn--outline:hover { background: var(--accent-light); border-color: var(--accent-mid); }
+
+/* ghost */
+.daur-btn--ghost { background: transparent; color: var(--text-muted); }
+.daur-btn--ghost:hover { background: var(--bg-inset); color: var(--text-primary); }
+
+/* danger */
+.daur-btn--danger { background: var(--danger); color: #fff; }
+.daur-btn--danger:hover { background: #7e3017; }
+
+.daur-btn:disabled, .daur-btn[aria-disabled="true"] {
+  background: var(--bg-inset); color: var(--text-dim);
+  border-color: var(--border-subtle); cursor: not-allowed;
+}
+.daur-btn--sm { padding: 6px 11px; font-size: 11px; }
+.daur-btn--lg { padding: 12px 22px; font-size: 13px; }
+
+/* ---------- CARDS ---------- */
+.daur-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  padding: var(--card-pad-y) var(--card-pad-x);
+  transition: border-color .15s ease;
+}
+.daur-card:hover { border-color: var(--border-mid); }
+
+.daur-card__cat {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 7px;
+}
+.daur-card__title {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin: 0 0 4px;
+}
+.daur-card__src {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--text-muted);
+  margin: 0 0 12px;
+}
+
+/* ---------- BULLET LIST ---------- */
+.daur-list { list-style: none; margin: 0; padding: 0; }
+.daur-list li {
+  position: relative;
+  padding-left: 14px;
+  margin-bottom: 7px;
+  font-family: var(--font-serif);
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--text-body);
+}
+.daur-list li::before {
+  content: '\203A';            /* › */
+  position: absolute;
+  left: 0;
+  color: var(--accent-mid);
+  font-family: var(--font-mono);
+}
+
+/* ---------- TABS ---------- */
+.daur-tabs { display: flex; gap: 2px; border-bottom: 1px solid var(--border-subtle); }
+.daur-tab {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  background: transparent;
+  border: none;
+  border-radius: 6px 6px 0 0;
+  padding: 9px 16px;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-weight: 400;
+  transition: background-color .12s ease, color .12s ease;
+}
+.daur-tab:hover { color: var(--text-primary); background: var(--bg-raised); }
+.daur-tab[aria-selected="true"], .daur-tab.is-active {
+  background: var(--text-primary);
+  color: var(--bg-raised);
+  font-weight: 700;
+}
+
+/* ---------- BADGES ---------- */
+.daur-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+.daur-badge--accent { background: var(--accent-light); color: var(--accent); border-color: var(--border-subtle); }
+.daur-badge--leaf   { background: var(--accent-mid); color: #fff; }
+.daur-badge--success{ background: #e3efd5; color: var(--success); border-color: #c5dba6; }
+.daur-badge--warning{ background: #f4e9d2; color: var(--warning); border-color: #e3cfa0; }
+.daur-badge--danger { background: #f2ddd3; color: var(--danger); border-color: #e3bfae; }
+.daur-badge--neutral{ background: var(--bg-inset); color: var(--text-muted); border-color: var(--border-subtle); }
+
+/* ---------- CALLOUT / STAT BANNER ---------- */
+.daur-callout {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  background: var(--accent-light);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-callout);
+  padding: 12px 16px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-body);
+}
+.daur-callout [data-ic] { color: var(--accent); flex: none; }
+.daur-callout strong { color: var(--text-primary); font-weight: 700; }
+
+/* ---------- FORM FIELDS ---------- */
+.daur-field { display: flex; flex-direction: column; gap: 6px; }
+.daur-field__label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.daur-input {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  color: var(--text-primary);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 7px;
+  padding: 9px 12px;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.daur-input::placeholder { color: var(--text-dim); }
+.daur-input:hover { border-color: var(--border-mid); }
+.daur-input:focus { outline: none; border-color: var(--accent); box-shadow: var(--focus-ring); }
+
+/* ---------- ICONS ----------
+   Inline Lucide SVGs via assets/icons.js: <i data-ic="leaf"></i>.
+   Color follows `color` (currentColor). Size via data-size or CSS. */
+[data-ic] { display: inline-flex; line-height: 0; vertical-align: middle; }
+[data-ic] svg { display: block; }
+
+/* ---------- INTRO / CONTEXT PARAGRAPH ---------- */
+.daur-intro {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 62ch;
+}
+.daur-intro strong { color: var(--text-primary); font-weight: 700; }
+.daur-intro a { color: var(--accent-teal); }

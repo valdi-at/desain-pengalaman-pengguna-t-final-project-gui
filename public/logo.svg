@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="184" height="48" viewBox="0 0 184 48" fill="none">
+  <rect x="2" y="6" width="36" height="36" rx="9" fill="#3B6D11"></rect>
+  <g transform="translate(11,15)" stroke="#EAF3DE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M9 18A7 7 0 0 1 7.8 4.1C13.5 3 15 2.48 17 0c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" transform="scale(0.8)"></path>
+    <path d="M0 19c0-3 1.85-5.36 5.08-6C7.5 12.52 10 11 11 10" transform="scale(0.8)"></path>
+  </g>
+  <text x="48" y="32" font-family="Fraunces, Georgia, &#39;Times New Roman&#39;, serif" font-size="27" letter-spacing="-0.5" fill="#1c2b14">Daur</text>
+  <text x="113" y="31" font-family="&#39;DM Mono&#39;, ui-monospace, Consolas, monospace" font-size="9.5" letter-spacing="2" fill="#6b8257">RECYCLE</text>
+</svg>
